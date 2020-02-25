@@ -1,0 +1,40 @@
+var campos = [
+    document.querySelector('#data'),
+    document.querySelector("#quantidade"),
+    document.querySelector('#valor')
+
+];
+
+console.log(campos)
+var tdbody = document.querySelector('table tbody');
+document.querySelector('.form').addEventListener('submit', function(event) {
+
+    event.preventDefault();
+    var tr = document.createElement('tr'); // criando uma tr
+
+    //crio as td para inserir na tabela 
+    campos.forEach(function(campo) { // criando o forEach
+
+        var td = document.createElement('td');
+        td.textContent = campo.value;
+        tr.appendChild(td);
+    });
+
+    var tdVolume = document.createElement('td');
+    tdVolume.textContent = campos[1].value * campos[2].value;
+
+    tr.appendChild(tdVolume);
+
+    tdbody.appendChild(tr);
+
+    campos[0].value = '';
+    campos[1].value = 1;
+    campos[2].value = 0.0;
+
+    campos[0].focus();
+
+
+
+
+
+});
