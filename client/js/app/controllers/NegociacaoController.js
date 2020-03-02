@@ -7,6 +7,10 @@ class NegociacaoController {
             this._inputQuantidade = $('#quantidade');
             this._inputValor = $('#valor');
             this._listaNegociacoes = new ListaNegociacoes();
+            this._negociacoesView = new NegociacoesView($('#negociacoesView'));
+
+            this._negociacoesView.update();
+
         }
         // utilizando a função map e utilizado o spread operador indeicando que o array será desmenbrado
     adiciona(event) {
